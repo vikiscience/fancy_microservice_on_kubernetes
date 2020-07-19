@@ -6,12 +6,9 @@
 # (Optional) Build a simple integration test
 
 setup:
-	# Create python virtualenv
+	# Create python virtualenv & source it
+	# source ~/.devops/bin/activate
 	python3 -m venv ~/.devops
-
-activate:
-    # Source into the existing virtualenv
-    source ~/.devops/bin/activate
 
 install:
 	# This should be run from inside a virtualenv
@@ -31,4 +28,4 @@ lint:
 	# This should be run from inside a virtualenv
 	pylint --disable=R,C,W1203 app.py
 
-all: activate install lint test
+all: install lint test
