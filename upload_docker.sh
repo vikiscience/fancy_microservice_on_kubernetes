@@ -5,11 +5,14 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+export DOCKERPATH=bitelds/demos
+export TAG=fancy_app
 
 # Step 2:  
 # Authenticate & tag
-echo "Docker ID and Image: $dockerpath"
+echo "Docker ID and Image: $DOCKERPATH"
+docker tag $TAG $DOCKERPATH:$TAG
 
 # Step 3:
 # Push image to a docker repository
+docker push $DOCKERPATH:$TAG
