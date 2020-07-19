@@ -1,13 +1,11 @@
-> kubectl create deployment my-deployment --image=bitelds/demos:fancy_app -n test-apps
-
-> kubectl get pods -n test-apps
-NAME                             READY   STATUS    RESTARTS   AGE
-my-deployment-747c8bf8b6-wdfrj   1/1     Running   0          4m44s
-
-> kubectl expose deployment my-deployment --type=NodePort --port=8080
-
-> kubectl logs my-deployment-6f66b74b67-wjn7l -n test-apps
-
+PS C:\Windows\system32> kubectl create deployment fancy-deployment --image=bitelds/demos:fancy_app
+deployment.apps/fancy-deployment created
+PS C:\Windows\system32> kubectl get pods
+NAME                               READY   STATUS    RESTARTS   AGE
+fancy-deployment-996f97c65-bzvjx   1/1     Running   0          113s
+PS C:\Windows\system32> kubectl expose deployment fancy-deployment --type=NodePort --port=8080
+service/fancy-deployment exposed
+PS C:\Windows\system32> kubectl logs fancy-deployment-996f97c65-bzvjx
  * Serving Flask app "app" (lazy loading)
  * Environment: production 
    WARNING: Do not use the development server in a production environment. 
