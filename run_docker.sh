@@ -2,7 +2,7 @@
 
 ## Complete the following steps to get Docker running locally
 export PORT=8080
-exort TAG=fancy_app
+export TAG=fancy_app
 
 # Step 1:
 # Build image and add a descriptive tag
